@@ -18,18 +18,18 @@ export default function Hero() {
     const { lines } = new SplitText($body.current, { type: 'lines' });
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      playHeading();
 
+      playHeading();
       tl
-        .from(lines, { y: 60, opacity: 0, duration: 0.35, stagger: 0.35, ease: 'power1.in' })
-        .from($btn.current, { opacity: 0, duration: 0.4, ease: 'power1.inOut' });
+        .from(lines, { y: 32, opacity: 0, duration: 0.4, stagger: 0.12, ease: 'power2.out' }, 0.3)
+        .from($btn.current, { opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.5);
     });
     GSDevTools.create();
     return () => ctx.kill();
   }, []);
 
   return (
-    <section className="text-center pt-32 pb-32 max-w-[40rem] mx-auto space-y-10 flex flex-col justify-center items-center">
+    <section className="text-center pt-32 pb-32 max-w-[38rem] mx-auto space-y-10 flex flex-col justify-center items-center">
       <h1 className="text-7xl font-semibold" ref={$heading}>
         All-in-one Financial Platform for Employees
       </h1>

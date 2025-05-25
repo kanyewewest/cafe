@@ -40,7 +40,7 @@ export default function useRainbowText($el: React.RefObject<HTMLHeadingElement |
         }
 
         gsap.from(chars[j], {
-          ease: 'power1.in',
+          ease: 'power2.out',
           opacity: 0,
           duration: OPACITY_DUR,
           delay: STAGGER * cc,
