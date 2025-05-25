@@ -9,10 +9,11 @@
 
 html,
 body {
+  @apply font-medium text-lg;
 }
 
 @layer components {
   .btn {
-    @apply bg-blue-600 px-6 py-3 rounded-3xl text-white hover:bg-blue-800 hover:cursor-pointer;
+    @apply bg-blue-600 px-9 py-4 rounded-4xl text-white hover:bg-blue-800 hover:cursor-pointer;
   }
 }
