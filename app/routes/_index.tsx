@@ -1,14 +1,24 @@
+import Navbar from "~/components/navbar/navbar";
 import type { Route } from "./+types/_index";
+import Hero from "~/components/hero/hero";
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Renance" },
+    {
+      name: "description",
+      content: "Demo for a behance shot.",
+    },
   ];
 }
 
 export default function Home() {
-  return (<div>
-    Hullo!
-  </div>);
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+      </main>
+    </>
+  );
 }

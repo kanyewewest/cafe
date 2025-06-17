@@ -1,0 +1,7 @@
+{
+  "scss.showErrors": true,
+  "css.customData": [".vscode/tailwind.json"],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

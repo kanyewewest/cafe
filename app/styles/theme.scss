@@ -1,0 +1,54 @@
+@use "sass:map";
+
+$base-color-schemes: (
+  "blue": (
+    100: hsl(229, 90%, 60%),
+    200: hsl(229, 95%, 50%),
+  ),
+  "orange": (
+    100: hsl(12, 95%, 65%),
+    200: hsl(11, 99%, 61%),
+  ),
+  "yellow": (
+    100: hsl(46, 100%, 70%),
+    200: hsl(47, 90%, 53%),
+  ),
+  "pink": (
+    100: hsl(301, 96%, 80%),
+    200: hsl(312, 47%, 63%),
+  ),
+  "white": (
+    100: hsl(0, 0%, 100%),
+    200: hsl(0, 0%, 85%),
+  ),
+  "brown": (
+    100: hsl(0, 98%, 17%),
+    200: hsl(0, 98%, 10%),
+  ),
+);
+
+$theme-color-schemes: (
+  "primary": map.get($base-color-schemes, "white"),
+  "secondary": map.get($base-color-schemes, "blue"),
+  "accent": map.get($base-color-schemes, "brown"),
+);
+
+///
+
+@mixin generate-themes {
+  @each $name, $weights in $base-color-schemes {
+    @each $weight, $color in $weights {
+      --_color-#{$name}-#{$weight}: #{$color};
+    }
+  }
+
+  @each $name, $scheme in $theme-color-schemes {
+    @each $weight, $color in $scheme {
+      --color-#{$name}-#{$weight}: #{$color};
+    }
+  }
+}
+
+:root {
+  @include generate-themes();
+}
