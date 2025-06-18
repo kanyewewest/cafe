@@ -1,6 +1,6 @@
 # Renance
 
-Small study implementation of a behance shot.
+Small study implementation of a behance shot animation.
 
 ## Relevant Tools
 
